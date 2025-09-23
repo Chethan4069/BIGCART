@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Big cart - Profile</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Colo Shop Template">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+<style>
+    .profile_container {
+        padding-top: 180px;
+        padding-bottom: 100px;
+    }
+    .profile-card {
+        padding: 40px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    .profile_pic_container img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid #eaeaea;
+        margin-bottom: 20px;
+    }
+    .form-control-static {
+        padding-top: calc(0.375rem + 1px);
+        padding-bottom: calc(0.375rem + 1px);
+        margin-bottom: 0;
+        line-height: 1.5;
+    }
+    #profile_image.editable {
+        cursor: pointer;
+    }
+    .section_title h2 {
+        margin-bottom: 40px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="super_container">
+
+	<header class="header trans_300">
+
+		<div class="top_nav">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="top_nav_left">free shipping on all INR orders over $50</div>
+					</div>
+					<div class="col-md-6 text-right">
+						<div class="top_nav_right">
+							<ul class="top_nav_menu">
+
+								<li class="currency">
+									<a href="#">
+										INR
+										<i class="fa fa-angle-down"></i>
+									</a>
+									<ul class="currency_selection">
+										<li><a href="#">USD</a></li>
+									</ul>
+								</li>
+								<li class="language">
+									<a href="#">
+										English
+										<i class="fa fa-angle-down"></i>
+									</a>
+									<ul class="language_selection">
+										<li><a href="#">Hindi</a></li>
+						                <li><a href="#">Kannada</a></li>
+									</ul>
+								</li>
+								<li class="account">
+									<a href="#">
+										My Account
+										<i class="fa fa-angle-down"></i>
+									</a>
+									<ul class="account_selection">
+										<li><a href="profile_page.html"><i class="fa fa-user" aria-hidden="true"></i>Profile</a></li>
+                                        <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i>Settings</a></li>
+										<li><a href="index.html"><i class="fa fa-sign-in" aria-hidden="true"></i>Logout</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="main_nav_container">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-right">
+						<div class="logo_container">
+							<a href="#">big<span>cart</span></a>
+						</div>
+						<nav class="navbar">
+							<ul class="navbar_menu">
+								<li><a href="home.html">home</a></li>
+								<li><a href="categories.html">shop</a></li>
+								<li><a href="#">promotion</a></li>
+								<li><a href="#">pages</a></li>
+								<li><a href="contact.html">contact</a></li>
+							</ul>
+							<ul class="navbar_user">
+								<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+								<li><a href="profile_page.html"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+								<li class="checkout">
+									<a href="cart.html">
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<span id="checkout_items" class="checkout_items">2</span>
+									</a>
+								</li>
+							</ul>
+							<div class="hamburger_container">
+								<i class="fa fa-bars" aria-hidden="true"></i>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</header>
+
+	<div class="fs_menu_overlay"></div>
+	<div class="hamburger_menu">
+		<div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
+		<div class="hamburger_menu_content text-right">
+			<ul class="menu_top_nav">
+				<li class="menu_item has-children">
+					<a href="#">
+						INR
+						<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="menu_selection">
+						<li><a href="#">USD</a></li>
+					</ul>
+				</li>
+				<li class="menu_item has-children">
+					<a href="#">
+						English
+						<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="menu_selection">
+						<li><a href="#">Hindi</a></li>
+						<li><a href="#">Kannada</a></li>
+					</ul>
+				</li>
+				<li class="menu_item has-children">
+					<a href="#">
+						My Account
+						<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="menu_selection">
+						<li><a href="profile_page.html"><i class="fa fa-user" aria-hidden="true"></i>Profile</a></li>
+                        <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i>settings</a></li>
+						<li><a href="index.html"><i class="fa fa-sign-in" aria-hidden="true"></i>Logout</a></li>
+					</ul>
+				</li>
+				<li class="menu_item"><a href="#">home</a></li>
+				<li class="menu_item"><a href="#">shop</a></li>
+				<li class="menu_item"><a href="#">promotion</a></li>
+				<li class="menu_item"><a href="#">pages</a></li>
+				<li class="menu_item"><a href="#">contact</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="profile_container">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="section_title">
+						<h2>My Profile</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-lg-8">
+					<div class="profile-card">
+						<form id="profile_form" action="post">
+							<div class="profile_pic_container text-center">
+								<img id="profile_image" src="C:\Users\cheth\OneDrive\Desktop\E_commerse\coloshop-master\coloshop-master\images\profilephoto.jpg" alt="Profile Photo">
+								<input type="file" id="profile_pic_upload" name="profile_photo" style="display: none;" accept="image/*">
+								<label for="profile_pic_upload" id="upload_label" class="red_button" style="display: none; cursor: pointer;">Change Photo</label>
+							</div>
+
+							<div class="form-group row align-items-center">
+								<label class="col-md-3 col-form-label font-weight-bold">Name:</label>
+								<div class="col-md-9">
+									<p class="form-control-static" data-field="name">Chethan G S</p>
+									<input type="text" class="form-control" name="name" value="" style="display: none;">
+								</div>
+							</div>
+							<hr>
+							<div class="form-group row align-items-center">
+								<label class="col-md-3 col-form-label font-weight-bold">Email:</label>
+								<div class="col-md-9">
+									<p class="form-control-static" data-field="email">chethan******@gmail.com</p>
+									<input type="email" class="form-control" name="email" value="" style="display: none;">
+								</div>
+							</div>
+							<hr>
+							<div class="form-group row align-items-center">
+								<label class="col-md-3 col-form-label font-weight-bold">Phone Number:</label>
+								<div class="col-md-9">
+									<p class="form-control-static" data-field="phone">901*****04</p>
+									<input type="tel" class="form-control" name="phone" value="" style="display: none;">
+								</div>
+							</div>
+							<hr>
+							<div id="address_section">
+								<h5 class="font-weight-bold">Addresses</h5>
+								<div class="address-block mb-3">
+									<div class="form-group row align-items-center">
+										<label class="col-md-3 col-form-label">Address 1:</label>
+										<div class="col-md-9">
+											 <p class="form-control-static" data-field="address">Bengaluru,560107</p>
+											 <textarea class="form-control" name="addresses[]" style="display: none;"></textarea>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="text-right">
+								<button type="button" id="add_address_button" class="btn btn-sm btn-info" style="display: none;">+ Add Address</button>
+							</div>
+
+							<div class="button_container text-center mt-5">
+								<button type="button" id="edit_profile_button" class="red_button">Edit Profile</button>
+								<button type="submit" id="update_profile_button" class="red_button" style="display: none;">Update Profile</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="newsletter">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="newsletter_text d-flex flex-column justify-content-center align-items-lg-start align-items-md-center text-center">
+						<h4>Newsletter</h4>
+						<p>Subscribe to our newsletter and get 20% off your first purchase</p>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<form action="post">
+						<div class="newsletter_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-lg-end justify-content-center">
+							<input id="newsletter_email" type="email" placeholder="Your email" required="required" data-error="Valid email is required.">
+							<button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit">subscribe</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="footer_nav_container d-flex flex-sm-row flex-column align-items-center justify-content-lg-start justify-content-center text-center">
+						<ul class="footer_nav">
+							<li><a href="#">Blog</a></li>
+							<li><a href="#">FAQs</a></li>
+							<li><a href="contact.html">Contact us</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
+						<ul>
+							<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="footer_nav_container">
+						<div class="cr">©2018 All Rights Reserverd. Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#">Colorlib</a> &amp; distributed by <a href="https://themewagon.com">ThemeWagon</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/Isotope/isotope.pkgd.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="js/custom.js"></script>
+
+<script>
+$(document).ready(function(){
+    // --- EDIT PROFILE ---
+    $('#edit_profile_button').on('click', function() {
+        // Show input fields and hide static text
+        $('#profile_form .form-control-static').hide();
+        $('#profile_form .form-control, #profile_form textarea').show();
+
+        // Toggle action buttons
+        $(this).hide();
+        $('#update_profile_button').show();
+        $('#add_address_button').show();
+        $('#upload_label').show();
+        
+        // Make profile image clickable
+        $('#profile_image').addClass('editable');
+    });
+
+    // --- TRIGGER FILE UPLOAD ---
+    $('#profile_image.editable').on('click', function() {
+        $('#profile_pic_upload').click();
+    });
+	
+	$('#upload_label').on('click', function() {
+		$('#profile_pic_upload').click();
+	});
+
+    // --- PREVIEW PROFILE IMAGE ---
+    $('#profile_pic_upload').on('change', function(event) {
+        if (event.target.files && event.target.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#profile_image').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    });
+
+    // --- UPDATE PROFILE (FORM SUBMIT) ---
+    $('#profile_form').on('submit', function(event) {
+        event.preventDefault(); // Prevent actual submission for this demo
+
+        // Update static text with values from input fields
+        $('#profile_form .form-control, #profile_form textarea').each(function() {
+            var value = $(this).val();
+            // Find the corresponding static <p> element and update its text
+            $(this).siblings('.form-control-static').text(value).show();
+        });
+
+        // Hide inputs and show static text
+        $('#profile_form .form-control, #profile_form textarea').hide();
+        
+        // Toggle action buttons
+        $('#update_profile_button').hide();
+        $('#add_address_button').hide();
+        $('#edit_profile_button').show();
+        $('#upload_label').hide();
+        
+        // Make profile image non-clickable
+        $('#profile_image').removeClass('editable');
+    });
+
+    // --- ADD ANOTHER ADDRESS ---
+    $('#add_address_button').on('click', function() {
+        var addressCount = $('#address_section .address-block').length + 1;
+        var newAddressBlock = `
+            <div class="address-block mb-3">
+                <div class="form-group row align-items-center">
+                    <label class="col-md-3 col-form-label">Address ${addressCount}:</label>
+                    <div class="col-md-9">
+                         <p class="form-control-static" data-field="address" style="display: none;"></p>
+                         <textarea class="form-control" name="addresses[]" placeholder="Enter new address"></textarea>
+                    </div>
+                </div>
+             </div>
+        `;
+        $('#address_section').append(newAddressBlock);
+    });
+});
+</script>
+
+</body>
+
+</html>
