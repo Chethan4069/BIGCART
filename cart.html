@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Shopping Cart</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Colo Shop Template">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+<style>
+    .cart_section {
+        padding-top: 150px;
+        padding-bottom: 100px;
+        background-color: #f8f9fa;
+    }
+    .cart_title {
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 40px;
+    }
+    .cart_items_list {
+        background: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+    .cart_item {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #e9e9e9;
+        padding: 20px 0;
+    }
+    .cart_item:last-child {
+        border-bottom: none;
+    }
+    .cart_item_image {
+        width: 90px;
+        height: 90px;
+        margin-right: 20px;
+    }
+    .cart_item_image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    .cart_item_info {
+        flex-grow: 1;
+    }
+    .cart_item_name a {
+        color: #333;
+        transition: color 0.3s;
+    }
+    .cart_item_name a:hover {
+        color: #fe4c50;
+    }
+    .cart_item_price {
+        color: #fe4c50;
+        font-weight: 600;
+    }
+    .cart_item_quantity {
+        display: flex;
+        align-items: center;
+        width: 120px;
+        justify-content: center;
+    }
+    .quantity_selector {
+        display: flex;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    .quantity_selector span {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+    }
+    .quantity_selector .minus, .quantity_selector .plus {
+        cursor: pointer;
+        font-size: 16px;
+        user-select: none;
+    }
+    .cart_item_total {
+        width: 100px;
+        text-align: right;
+        font-weight: 600;
+        font-size: 16px;
+    }
+    .cart_item_remove {
+        width: 50px;
+        text-align: right;
+    }
+    .remove_button {
+        color: #999;
+        font-size: 18px;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+    .remove_button:hover {
+        color: #fe4c50;
+    }
+    .order_total {
+        background: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+    .order_total_title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+    .order_total_item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+    .order_total_item:last-of-type {
+        font-weight: bold;
+        color: #fe4c50;
+        border-top: 1px solid #eee;
+        padding-top: 15px;
+    }
+    .button {
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+    .cart_button_checkout {
+        background: #fe4c50;
+        color: #fff;
+        width: 100%;
+    }
+</style>
+</head>
+
+<body>
+<div class="super_container">
+
+	<!-- Header (Consistent with home.html) -->
+	<header class="header trans_300">
+		<div class="top_nav"><div class="container"><div class="row"><div class="col-md-6"><div class="top_nav_left">free shipping on all INR orders over $50</div></div><div class="col-md-6 text-right"><div class="top_nav_right"><ul class="top_nav_menu"><li class="currency"><a href="#">INR<i class="fa fa-angle-down"></i></a><ul class="currency_selection"><li><a href="#">USD</a></li></ul></li><li class="language"><a href="#">English<i class="fa fa-angle-down"></i></a><ul class="language_selection"><li><a href="#">Hindi</a></li><li><a href="#">Kannada</a></li></ul></li><li class="account"><a href="#">My Account<i class="fa fa-angle-down"></i></a><ul class="account_selection"><li><a href="profile_page.html"><i class="fa fa-user" aria-hidden="true"></i>Profile</a></li><li><a href="index.html"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li></ul></li></ul></div></div></div></div></div>
+		<div class="main_nav_container"><div class="container"><div class="row"><div class="col-lg-12 text-right"><div class="logo_container"><a href="home.html">Big<span>cart</span></a></div><nav class="navbar"><ul class="navbar_menu"><li><a href="home.html">home</a></li><li><a href="categories.html">shop</a></li><li><a href="#">promotion</a></li><li><a href="#">pages</a></li><li><a href="contact.html">contact</a></li></ul><ul class="navbar_user"><li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li><li><a href="profile_page.html"><i class="fa fa-user" aria-hidden="true"></i></a></li><li class="checkout"><a href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span id="checkout_items" class="checkout_items">0</span></a></li></ul><div class="hamburger_container"><i class="fa fa-bars" aria-hidden="true"></i></div></nav></div></div></div></div>
+	</header>
+
+	<!-- Cart Section -->
+	<div class="cart_section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="cart_container">
+						<div class="cart_title">Shopping Cart</div>
+						<div class="row">
+                            <div class="col-lg-8">
+                                <div id="cart_items_container" class="cart_items_list">
+                                    <div id="empty_cart_message" class="text-center p-5" style="display:none;">
+                                        <h4>Your cart is currently empty.</h4>
+                                        <a href="categories.html" class="red_button button" style="color:white;display:inline-block; margin-top:20px; text-decoration: none;">Continue Shopping</a>
+                                    </div>
+                                    <!-- Cart items will be dynamically injected here -->
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="order_total">
+                                    <div class="order_total_title">Order Summary</div>
+                                    <div class="order_total_content">
+                                        <div class="order_total_item"><div class="order_total_subtitle">Subtotal</div><div id="cart-subtotal" class="order_total_amount">$0.00</div></div>
+                                        <div class="order_total_item"><div class="order_total_subtitle">Shipping</div><div id="cart-shipping" class="order_total_amount">Free</div></div>
+                                        <div class="order_total_item"><div class="order_total_subtitle">GST</div><div id="cart-shipping" class="order_total_amount">0.00</div></div>
+                                        <div class="order_total_item"><div class="order_total_subtitle">Total</div><div id="cart-total" class="order_total_amount">$0.00</div></div>
+                                    </div>
+                                    <div  class="cart_button_checkout button trans_300"><a href="checkout.html" style="color:white; text-decoration: none;">Proceed to Checkout</a></div>
+                                </div>
+                            </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Newsletter (Consistent with home.html) -->
+	<div class="newsletter"><div class="container"><div class="row"><div class="col-lg-6"><div class="newsletter_text d-flex flex-column justify-content-center align-items-lg-start align-items-md-center text-center"><h4>Newsletter</h4><p>Subscribe to our newsletter and get 20% off your first purchase</p></div></div><div class="col-lg-6"><form action="post"><div class="newsletter_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-lg-end justify-content-center"><input id="newsletter_email" type="email" placeholder="Your email" required="required" data-error="Valid email is required."><button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit">subscribe</button></div></form></div></div></div></div>
+
+	<!-- Footer (Consistent with home.html) -->
+	<footer class="footer"><div class="container"><div class="row"><div class="col-lg-6"><div class="footer_nav_container d-flex flex-sm-row flex-column align-items-center justify-content-lg-start justify-content-center text-center"><ul class="footer_nav"><li><a href="#">Blog</a></li><li><a href="#">FAQs</a></li><li><a href="contact.html">Contact us</a></li></ul></div></div><div class="col-lg-6"><div class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center"><ul><li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li><li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li><li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li><li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li><li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li></ul></div></div></div><div class="row"><div class="col-lg-12"><div class="footer_nav_container"><div class="cr">©2018 All Rights Reserverd. Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#">Colorlib</a> &amp; distributed by <a href="https://themewagon.com">ThemeWagon</a></div></div></div></div></div></footer>
+
+</div>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/custom.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cartItemsContainer = document.getElementById('cart_items_container');
+        const emptyCartMessage = document.getElementById('empty_cart_message');
+
+        function renderCart() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            // --- FIX IS HERE: Filter out any invalid items ---
+            const validCart = cart.filter(item => item && item.id && item.name && typeof item.price === 'number');
+            
+            // If the cart was cleaned, update localStorage with the clean version
+            if (validCart.length < cart.length) {
+                localStorage.setItem('cart', JSON.stringify(validCart));
+            }
+
+            // Clear previous items from the display
+            while (cartItemsContainer.firstChild && cartItemsContainer.firstChild !== emptyCartMessage) {
+                cartItemsContainer.removeChild(cartItemsContainer.firstChild);
+            }
+
+            if (validCart.length === 0) {
+                emptyCartMessage.style.display = 'block';
+            } else {
+                emptyCartMessage.style.display = 'none';
+                validCart.forEach(item => {
+                    const price = item.price; // No need to check again, we already filtered
+                    const quantity = item.quantity || 1;
+                    const total = price * quantity;
+
+                    const cartItemEl = document.createElement('div');
+                    cartItemEl.className = 'cart_item';
+                    cartItemEl.dataset.id = item.id;
+                    cartItemEl.innerHTML = `
+                        <div class="cart_item_image"><img src="${item.image}" alt="${item.name}"></div>
+                        <div class="cart_item_info">
+                            <div class="cart_item_name"><a href="#">${item.name}</a></div>
+                            <div class="cart_item_price">$${price.toFixed(2)}</div>
+                        </div>
+                        <div class="cart_item_quantity">
+                            <div class="quantity_selector">
+                                <span class="minus"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                <span class="quantity_value">${quantity}</span>
+                                <span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                        <div class="cart_item_total">$${total.toFixed(2)}</div>
+                        <div class="cart_item_remove"><i class="fa fa-trash remove_button" aria-hidden="true"></i></div>
+                    `;
+                    cartItemsContainer.insertBefore(cartItemEl, emptyCartMessage);
+                });
+            }
+            addEventListenersToItems();
+            updateTotals();
+            updateCartHeaderCount();
+        }
+
+        function updateTotals() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const subtotal = cart.reduce((total, item) => {
+                const price = typeof item.price === 'number' ? item.price : 0;
+                const quantity = typeof item.quantity === 'number' ? item.quantity : 1;
+                return total + (price * quantity);
+            }, 0);
+            
+            document.getElementById('cart-subtotal').textContent = '$' + subtotal.toFixed(2);
+            document.getElementById('cart-total').textContent = '$' + subtotal.toFixed(2);
+        }
+
+        function updateCartHeaderCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartCount = cart.reduce((total, item) => total + (item.quantity || 0), 0);
+            document.getElementById('checkout_items').textContent = cartCount;
+        }
+
+        function changeQuantity(productId, change) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const productIndex = cart.findIndex(item => item.id === productId);
+
+            if (productIndex > -1) {
+                if (change === -Infinity) {
+                    cart.splice(productIndex, 1);
+                } else {
+                    cart[productIndex].quantity += change;
+                    if (cart[productIndex].quantity <= 0) {
+                        cart.splice(productIndex, 1);
+                    }
+                }
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+        }
+        
+        function addEventListenersToItems() {
+            document.querySelectorAll('.cart_item').forEach(item => {
+                const productId = item.dataset.id;
+                item.querySelector('.plus').onclick = () => changeQuantity(productId, 1);
+                item.querySelector('.minus').onclick = () => changeQuantity(productId, -1);
+                item.querySelector('.remove_button').onclick = () => changeQuantity(productId, -Infinity);
+            });
+        }
+        
+        renderCart();
+    });
+</script>
+</body>
+</html>
+
